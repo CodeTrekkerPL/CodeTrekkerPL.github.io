@@ -1,0 +1,1596 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kategoria / Wtyczka / Bootstrap / Vite</title>
+<script type="module" src="./js/main.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+//@todo Kamil
+
+// przełaczam widok listy filtrów
+        function openFilter() {
+        document.getElementById('filtr-box').className = "grid_filt";
+        element.classList.remove("grid_filtr_horizon");
+        }
+        function closeFilter() {
+        document.getElementById('filtr-box').className = "grid_filtr_horizon";
+        element.classList.remove("grid_filt");
+        }
+        </script>
+    <script>
+        $(document).ready(function() {
+        // Zmiana widoku na grid
+        function setGridView() {
+            $('#cat_option_viev').removeClass('list_view').addClass('card_view');
+        //    $('#gridViewBtn, #mobileGridViewBtn').addClass('btn-primary').removeClas('btn-secondary btn-light');
+        //    $('#listViewBtn, #mobileListViewBtn').addClass('btn-secondary').removeClas('btn-primary btn-light');
+        }
+        // Zmiana widoku na listę
+        function setListView() {
+            $('#cat_option_viev').removeClass('card_view').addClass('list_view');
+        //    $('#listViewBtn, #mobileListViewBtn').addClass('btn-primary').removeClas('btn-secondary btn-light');
+        //    $('#gridViewBtn, #mobileGridViewBtn').addClass('btn-secondary').removeClas('btn-primary btn-light');
+        }
+            // Obsługa przycisków do zmiany widoku
+            $('#gridViewBtn, #mobileGridViewBtn').click(setGridView);
+            $('#listViewBtn, #mobileListViewBtn').click(setListView);
+
+            // Pokazywanie/ukrywanie dolnego paska na urządzeniach mobilnych
+            $(window).on('scroll', function() {
+                let productSection = $('#cat_option_viev');
+                //let productSectionTop = productSection.offset().top;
+                let productSectionBottom = productSectionTop + productSection.outerHeight();
+                let windowBottom = $(window).scrollTop() + $(window).height();
+
+                if (windowBottom > productSectionTop && $(window).scrollTop() < productSectionBottom) {
+                    $('.mobile-view-controls').fadeIn();
+                } else {
+                    $('.mobile-view-controls').fadeOut();
+                }
+            });
+        });
+    </script>
+</head>
+  <body>
+    <header>
+        <div class="top_setion py-2">
+          <div class="container fw-medium">
+            <div class="row">
+              <div class="col-sm-3 d-none d-sm-none d-md-block ">
+                <button type="button" class="btn btn-sm btn-light fw-medium me-3"><i class="bi bi-telephone"></i> +48 42 28 075 71</button>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <div class="d-grid gap-2 d-inline-flex d-sm-flex justify-content-md-end">
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-none d-lg-block"><i class="bi bi-shield-plus me-1"></i> Zaloguj się</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-none d-lg-block"><i class="bi bi-person-plus me-1"></i> Rejestracja</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-sm-inline-flex " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i class="bi bi-person me-1"></i> Panel użytkownika</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium btn-outline d-sm-inline-flex"><span class="country me-2">Polska</span> <span class="currency me-2">Waluta:</span> <strong>PLN</strong></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src=./public/logo-wtyczka.svg class="logo" alt="Sklep wtyczka.net" />
+            </a>
+            <form class="d-flex w-50">
+                <div class="input-group">
+                <input class="form-control " type="search" placeholder="Wyszukaj" aria-label="Search">
+                <button class="btn btn-primary px-4" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+            </form>
+            <button class="btn btn-primary ms-2"><i class="bi bi-basket me-2"></i> Koszyk</button>
+          </div>
+        </nav>
+    </header>
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-expand-lg bg-dark shadow-sm py-1 position-relative">
+            <div class="container">
+                <div class="mb-0">
+                  <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_12" aria-expanded="false" aria-controls="category_12">Kategoria 1</button>
+                  <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_13" aria-expanded="false" aria-controls="category_13">Kategoria 2</button>
+                  <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_14" aria-expanded="false" aria-controls="category_14">Kategoria 3</button>
+                  <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_15" aria-expanded="false" aria-controls="category_15">Kategoria 4</button>
+                  <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_16" aria-expanded="false" aria-controls="category_16">Kategoria 5</button>
+                </div>
+            </div>
+        </nav>
+        <div class="container position-relative">
+            <div class="collapse position-absolute w-100 z-3" id="category_12">
+                <div class="card card-body">
+                  <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="/">Nazwa Kategorii @1</a>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse position-absolute w-100 z-3" id="category_13">
+                <div class="card card-body">
+                  <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @2</a>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse position-absolute w-100 z-3" id="category_14">
+                <div class="card card-body">
+                  <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @3</a>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse position-absolute w-100 z-3" id="category_15">
+                <div class="card card-body">
+                    <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @4</a>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse position-absolute w-100 z-3" id="category_16">
+                <div class="card card-body">
+                    <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @6</a>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                      <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid px-5">
+        <div id="catalog_body" class="col">
+            <h1 class="fw-bold fs-4 lh-lg my-0">Genus nomen productum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum faucibus urna, ac posuere enim gravida in. Quisque id lacus bibendum, pretium ipsum at, pellentesque est. Nulla mattis nec risus at eleifend. Cras sodales enim quam, a consectetur enim laoreet malesuada. Ut quis blandit massa, non sollicitudin dui. Mauris vestibulum malesuada lacus suscipit maximus. Suspendisse dictum dapibus tristique. Sed mauris nulla, mattis quis eleifend vel, sodales et nibh. Etiam ex augue, commodo eget ex at, laoreet molestie lectus. Cras aliquam massa sit amet nibh faucibus feugiat. Aenean aliquam id erat ut suscipit.</p>
+            <!-- <?php include 'sub_category.php';?> -->
+            <div class="catalog_filter_view mtr-2 mbr-2 rounded-2">
+                <div style="display:grid">
+                    <div class="container_option_filtr">
+                        <div><span class="filtr_fb"><i class="bi bi-arrow-down-square"></i> <strong>Filtruj</strong></span></div>
+                        <div><span class="filtr_vl rounded-2" onclick="closeFilter()"><i class="bi bi-grid-3x2-gap-fill"></i> pokaż mniej</span></div>
+                        <div><span class="filtr_vm rounded-2" onclick="openFilter()"><i class="bi bi-grid-3x3-gap-fill"></i> pokaż więcej</span></div>
+                        <!-- <div><span class="filtr_cl rounded-2"><i class="bi bi-trash"></i> wyczyść filtr</span></div> -->
+                    </div>
+                    <div id="filtr-box" class="grid_filtr_horizon">
+                        <div class="container_filtr rounded">
+                        <div class="i1">
+                            <div class="search">
+                                <div class="d-flex form-inputs">
+                                    <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                            </div>
+                            <div class="title"><strong>Consectetur adipiscing elit</strong></div>
+                            <div class="close"><i class="bi bi-x-square"></i></div>
+                            <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                        </div>
+                        <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1">
+                              <label class="form-check-label" for="pole_1">wartość jeden cechy 1</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_2">
+                              <label class="form-check-label" for="pole_2">wartość dwa cechy 2</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_3">
+                              <label class="form-check-label" for="pole_3">wartość trzy cechy 3</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_4">
+                              <label class="form-check-label" for="pole_4">wartość cztery cechy 4</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_5">
+                              <label class="form-check-label" for="pole_5">wartość pięć cechy 5</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_6">
+                              <label class="form-check-label" for="pole_6">wartość sześć cechy 6</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_7">
+                              <label class="form-check-label" for="pole_7">wartość siedem cechy 7</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_8">
+                              <label class="form-check-label" for="pole_8">wartość osiem cechy 8</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_9">
+                              <label class="form-check-label" for="pole_9">wartość dziewięć cechy 9</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_10">
+                              <label class="form-check-label" for="pole_10">wartość dziesieć cechy 10</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_11">
+                              <label class="form-check-label" for="pole_11">wartość dziesieć cechy 11</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Lorem ipsum dolor sit amet</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_111">
+                              <label class="form-check-label" for="pole_111">wartość jeden cechy 11</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_12">
+                              <label class="form-check-label" for="pole_12">wartość dwa cechy 12</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_13">
+                              <label class="form-check-label" for="pole_13">wartość trzy cechy 13</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_14">
+                              <label class="form-check-label" for="pole_14">wartość cztery cechy 14</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_15">
+                              <label class="form-check-label" for="pole_15">wartość pięć cechy 15</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Adipiscing elit</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_21">
+                              <label class="form-check-label" for="pole_21">wartość jeden cechy 21</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_22">
+                              <label class="form-check-label" for="pole_22">wartość dwa cechy 22</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_23">
+                              <label class="form-check-label" for="pole_23">wartość trzy cechy 23</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_24">
+                              <label class="form-check-label" for="pole_24">wartość cztery cechy 24</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_25">
+                              <label class="form-check-label" for="pole_25">wartość pięć cechy 25</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_26">
+                              <label class="form-check-label" for="pole_26">wartość pięć cechy 26</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_27">
+                              <label class="form-check-label" for="pole_27">wartość pięć cechy 27</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_121">
+                              <label class="form-check-label" for="pole_121">wartość jeden cechy 21</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_122">
+                              <label class="form-check-label" for="pole_122">wartość dwa cechy bardzo długa nazwa cechy 23</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_123">
+                              <label class="form-check-label" for="pole_123">wartość trzy cechy 24</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_124">
+                              <label class="form-check-label" for="pole_124">wartość cztery cechy 25</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_125">
+                              <label class="form-check-label" for="pole_125">wartość pięć cechy 26</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_126">
+                              <label class="form-check-label" for="pole_126">wartość pięć cechy 27</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_127">
+                              <label class="form-check-label" for="pole_127">wartość pięć cechy 28</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_128">
+                              <label class="form-check-label" for="pole_128">wartość pięć cechy 29</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_129">
+                              <label class="form-check-label" for="pole_129">wartość pięć cechy 30</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Iaculis quis fermentum nec</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_41">
+                              <label class="form-check-label" for="pole_41">wartość jeden cechy 1</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_42">
+                              <label class="form-check-label" for="pole_42">wartość dwa cechy 2</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_43">
+                              <label class="form-check-label" for="pole_43">wartość trzy cechy 34</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_44">
+                              <label class="form-check-label" for="pole_44">wartość cztery cechy 44</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_45">
+                              <label class="form-check-label" for="pole_45">wartość pięć cechy 45</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_46">
+                              <label class="form-check-label" for="pole_46">wartość sześć cechy 46</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_47">
+                              <label class="form-check-label" for="pole_47">wartość siedem cechy 47</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_48">
+                              <label class="form-check-label" for="pole_48">wartość osiem cechy 48</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_49">
+                              <label class="form-check-label" for="pole_49">wartość dziewięć cechy 49</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_40">
+                              <label class="form-check-label" for="pole_40">wartość dziesieć cechy 40</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_51">
+                              <label class="form-check-label" for="pole_51">wartość dziesieć cechy 41</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Aenean purus erat, iaculis quis fermentum nec</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_141">
+                              <label class="form-check-label" for="pole_141">wartość jeden cechy 1</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_142">
+                              <label class="form-check-label" for="pole_142">wartość dwa cechy 2</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_143">
+                              <label class="form-check-label" for="pole_143">wartość trzy cechy 34</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_144">
+                              <label class="form-check-label" for="pole_144">wartość cztery cechy 44</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_145">
+                              <label class="form-check-label" for="pole_145">wartość pięć cechy 45</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_146">
+                              <label class="form-check-label" for="pole_146">wartość sześć cechy 46</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_147">
+                              <label class="form-check-label" for="pole_147">wartość siedem cechy 47</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_148">
+                              <label class="form-check-label" for="pole_148">wartość osiem cechy 48</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_149">
+                              <label class="form-check-label" for="pole_149">wartość dziewięć cechy 49</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_140">
+                              <label class="form-check-label" for="pole_140">wartość dziesieć cechy 40</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_151">
+                              <label class="form-check-label" for="pole_151">wartość dziesieć cechy 41</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Consectetur adipiscing elit</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1111">
+                              <label class="form-check-label" for="pole_1111">wartość jeden cechy 1</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1222">
+                              <label class="form-check-label" for="pole_1222">wartość dwa cechy 2</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1234">
+                              <label class="form-check-label" for="pole_1234">wartość trzy cechy 3</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_4123">
+                              <label class="form-check-label" for="pole_4123">wartość cztery cechy 4</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_512">
+                              <label class="form-check-label" for="pole_512">wartość pięć cechy 5</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_612">
+                              <label class="form-check-label" for="pole_612">wartość sześć cechy 6</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_712">
+                              <label class="form-check-label" for="pole_712">wartość siedem cechy 7</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_812">
+                              <label class="form-check-label" for="pole_812">wartość osiem cechy 8</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_912">
+                              <label class="form-check-label" for="pole_912">wartość dziewięć cechy 9</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1012">
+                              <label class="form-check-label" for="pole_1012">wartość dziesieć cechy 10</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1190">
+                              <label class="form-check-label" for="pole_1190">wartość dziesieć cechy 11</label>
+                          </div>
+                      </div>
+                        </div>
+                        <div class="container_filtr rounded">
+                      <div class="i1">
+                          <div class="search">
+                              <div class="d-flex form-inputs">
+                                  <input class="form-control" type="text" placeholder="wyszukaj produkt ...">
+                                  <i class="bi bi-search"></i>
+                              </div>
+                          </div>
+                          <div class="title"><strong>Lorem ipsum dolor sit amet</strong></div>
+                          <div class="close"><i class="bi bi-x-square"></i></div>
+                          <div class="select_all"><span class="select_all_filter">Zaznacz wszystko</span></div>
+                      </div>
+                      <div class="characteristics overflow-auto">
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1110">
+                              <label class="form-check-label" for="pole_1110">wartość jeden cechy 11</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1209">
+                              <label class="form-check-label" for="pole_1209">wartość dwa cechy 12</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1309">
+                              <label class="form-check-label" for="pole_1309">wartość trzy cechy 13</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1409">
+                              <label class="form-check-label" for="pole_1409">wartość cztery cechy 14</label>
+                          </div>
+                          <div class="form-check mb_5">
+                              <input class="form-check-input" type="checkbox" value="" id="pole_1509">
+                              <label class="form-check-label" for="pole_1509">wartość pięć cechy 15</label>
+                          </div>
+                      </div>
+                        </div>
+                    </div>
+                    <div class="active_filtr">
+                        <ul class="list_act_filtr">
+                            <li><span class="filtr_cl btn-sm rounded-2"><i class="bi bi-trash"></i> wyczyść filtr</span></li>
+                            <li class="ms-3 me-3 py-2">Adipiscing elit <button type="button" class="btn btn-sm btn-secondary ms-3">wartość jeden cechy 11 <i class="bi bi-x-circle"></i></button></li>
+                            <li class="ms-3 me-3 py-2">Adipiscing elit <button type="button" class="btn btn-sm btn-secondary ms-3">wartość jeden cechy 11 <i class="bi bi-x-circle"></i></button></li>
+                            <li class="ms-3 me-3 py-2">Adipiscing elit <button type="button" class="btn btn-sm btn-secondary ms-3">wartość jeden cechy 11 <i class="bi bi-x-circle"></i></button></li>
+                            <li class="ms-3 me-3 py-2">Adipiscing elit <button type="button" class="btn btn-sm btn-secondary ms-3">wartość jeden cechy 11 <i class="bi bi-x-circle"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid rounded-2 d-lg-none d-xl-none d-xxl-none py-3 mt-3 mb-3 static_pagination">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="input-group justify-content-center">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-bar-left text-info-emphasis"></i></button>
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-left text-info-emphasis"></i></button>
+                            </div>
+                            <div class="input-group-btn">        
+                                <input inputmode="numeric" class="form-control text-center rounded-start-2 rounded-end-0 px-md-4 px-sm-1" type="text" style="width: 5rem" value="9">
+                            </div>
+                            <div class="input-group-btn"> 
+                                <input  class="form-control text-center rounded-start-0 rounded-end-0 px-md-4 px-sm-1" type="text" style="width: 5rem" value="999" disabled>
+                            </div>
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary rounded-start-0 rounded-end-2" type="button">Przejdź</button>
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-right text-info-emphasis"></i></button>
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-bar-right text-info-emphasis"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="catalog_card_view my-3 py-2 px-2 rounded-2">
+            <div>
+                <span id="listViewBtn"><img class="icon-view" src="./public/list-view.svg" alt="Widok lista"/></span>
+                <span id="gridViewBtn"><img class="icon-view" src="./public/card-view.svg" alt="Widok kafelki"/></span>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="show_availability">
+                <label class="form-check-label" for="show_availability">Pokaż dostępne w magazynie</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="photo">
+                <label class="form-check-label" for="photo">Zdjęcia 360</label>
+            </div>
+            <div class="form-check">
+                <select aria-label="select_a_category" class="form-select rounded-2 float-end">
+                    <option selected="Produktów na stronie">Produktów na stronie: 100</option>
+                    <option value="1">Produktów na stronie: 150</option>
+                    <option value="2">Produktów na stronie: 200</option>
+                    <option value="3">Produktów na stronie: 250</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mobile-view-controls d-lg-none d-xl-none d-xxl-none">
+            <div class="filter_container">
+                <div class="tiles_mob">
+                    <button id="mobileGridViewBtn" class="btn btn-light w-100"><i class="bi bi-grid-3x3-gap"></i> <span>Kafelki</span></button>
+                </div>
+                <div class="list_mob">
+                    <button id="mobileListViewBtn" class="btn btn-light w-100"><i class="bi bi-list"></i> <span>Lista</span></button>
+                </div>
+                <div class="filtr_mob">
+                    <button class="btn btn-light w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMain" aria-controls="offcanvasMain"><i class="bi bi-funnel"></i><span> Filtry</span> <span class="badge text-bg-primary ms-3">66</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- lista produktów-->
+        <div id="cat_option_viev" class="list_view">
+            <div id="products" class="grid_style" >
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B1/8D/70/00/0/514075_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=866e547c817f7a8b5fb32e71788eea462819eba1" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">LL Komputer jednopłytkowy; ARM A10; 84x60mm; 5VDC; DDR3,NAND Flash #404 Prototyp 345</h2>
+                            </div>
+                            <div class="short_product_desc">
+                                <p>Komputer jednopłytkowy; Cortex A8; 2kBEEPROM,512MBRAM,8GBFLASH</p>
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>345345345555XDLOL</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="row">
+                                    <div class="col-12 py-2">
+                                        <span class="float-start ms-md-1 ms-sm-1 ms-lg-0 ms-xl-0 fw-blod fs-5">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-0 fw-bolder fs-5">34554,00 zł</span>
+                                    </div>
+                                    <div class="col-12 py-2">
+                                        <span class="float-start ms-md-1 ms-sm-1 ms-lg-0 ms-xl-0 fw-blod fs-5">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-0 fw-bolder fs-5">34555,00 zł</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                            <div class="card_availability">
+                                <div class="status">
+                                    <span><span class="badge text-bg-success">100</span>Dostępny</span>
+                                </div>
+                                <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                            </div>
+                            <div class="card_add_to_cart">
+                                <div class="quantity_box">
+                                    <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                    <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                    <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                </div>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                </div>
+                            </div>
+                            <div class="card_total_price">
+                                <p class="ctp">Razem: 5678.454 PLN</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/31/90/00/0/594847_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=0885c20bb0efc7dec9f45a7b5e6d958e1f3c6c33" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer jednopłytkowy; ARM A10; 84x60mm; 5VDC; DDR3,NAND Flash #1</h2>
+                            </div>
+                            <div class="short_product_desc">
+                                <p>Komputer jednopłytkowy; Cortex A8; 2kBEEPROM,512MBRAM,8GBFLASH</p>
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>345345345555</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">10</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn_1">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput_1" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn_2">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 2678.454 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B4/0C/D0/00/0/901195_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=8176e8c0bebd2c156e3f0946165464e76451a926" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer jednopłytkowy; ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                                <p>Komputer jednopłytkowy; Cortex A8; 2kBEEPROM,512MBRAM,8GBFLASH</p>
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/45345555</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2 lh-lg"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 fw-medium">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 fw-bolder">2500,89 zł</span></div>
+                                    <div class="mb-2 px-2 py-2 lh-lg"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 fw-medium">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 fw-bolder">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">320.89</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 1878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">Ilość</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">Cena netto ( PLN / szt.)</span></div>
+                                    <button type="button" class="btn btn-sm w-100 act"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4">1+</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4">1158,78</span></button>
+                                    <button type="button" class="btn btn-sm w-100"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4">5+</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4">1042.88</span></button>
+                                    <button type="button" class="btn btn-sm w-100"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4">10+</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4">12927,01</span></button>
+                                    <button type="button" class="btn btn-sm w-100"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4">15+</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4">22811,10</span></button>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat_list_prod">
+                    <div class="product_container card shadow">
+                        <div class="product_image">
+                            <a href="#" title="Nazwa produktu">
+                                <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" class="card-img-top lazy" alt="nazwa produktu">
+                            </a>
+                        </div>
+                        <div class="product_decs">
+                            <div class="product_title">
+                                <h2 class="card_title">Komputer ARM B30; 84x60mm;</h2>
+                            </div>
+                            <div class="short_product_desc">
+                            </div>
+                            <div class="product_code">
+                                <div class="card_code">Kod produktu: <strong>EN/453455/WTR</strong></div>
+                            </div>
+                            <div class="product_info">
+                                <div class="prod_option">
+                                    <span data-bs-toggle="offcanvas" data-bs-target="#offcanvas_pdf" aria-controls="offcanvas_pdf">
+                                        <i class="bi bi-filetype-pdf"></i>
+                                    </span>
+                                </div>
+                                <div class="reserve_1"><i class="bi bi-star"></i></div>
+                                <div class="reserve_2"><i class="bi bi-exclamation-octagon"></i></div>
+                                <div class="reserve_3"><i class="bi bi-floppy"></i></div>
+                            </div>
+                        </div>
+                        <div class="prod_order_price">
+                            <div class="product_price">
+                                <div class="card_price">
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">netto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">2500,00 zł</span></div>
+                                    <div class="mb-2 px-2 py-2"><span class="float-start ms-md-1 ms-sm-1 ms-lg-3 ms-xl-4 blod">brutto</span> <span class="float-end me-md-1 me-sm-1 me-lg-3 me-xl-4 blod">3500,00 zł</span></div>
+                                </div>
+                            </div>
+                            <div class="product_order">
+                                <div class="card_availability">
+                                    <div class="status">
+                                        <span><span class="badge text-bg-success">55</span>Dostępny</span>
+                                    </div>
+                                    <span class="wbt text-end" type="button" data-bs-target="#modal_availability" data-bs-toggle="modal">sprawdź dostawy</span>
+                                </div>
+                                <div class="card_add_to_cart">
+                                    <div class="quantity_box">
+                                        <button class="minusBtn btn btn-outline-secondary" type="button" id="minusBtn">-</button>
+                                        <input type="text" class="quantityInput form-control text-center" id="quantityInput" value="1">
+                                        <button class="plusBtn btn btn-outline-secondary" type="button" id="plusBtn">+</button>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-primary h-100">dodaj do koszyka</button>
+                                    </div>
+                                </div>
+                                <div class="card_total_price">
+                                    <p class="ctp">Razem: 878.45 PLN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination-bar">
+                    <div class="container-fluid">
+                        <div class="row">
+                          <div class="input-group justify-content-center">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-bar-left"></i></button>
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-left"></i></button>
+                            </div>
+                            <div class="input-group-btn">        
+                                <input inputmode="numeric" class="form-control text-center rounded-start-2 rounded-end-0 px-md-4 px-sm-2" type="text" style="width: 5rem" value="5">
+                            </div>
+                            <div class="input-group-btn"> 
+                                <input class="form-control text-center rounded-start-0 rounded-end-0 px-md-4 px-sm-2" type="text" style="width: 5rem" value="555" disabled>
+                            </div>
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary rounded-start-0 rounded-end-2" type="button"> Przejdź</button>
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-right"></i></button>
+                                <button class="btn btn-default" type="button"><i class="bi bi-chevron-bar-right"></i></button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Bootstrap JS (zawiera Popper.js) -->
+        
+            <script>
+                    //popovers
+                    
+                    // Paginacja
+                     $(document).ready(function() {
+                    // Pokazywanie/ukrywanie dolnego paska na urządzeniach mobilnych
+                    $(window).on('scroll', function() {
+                        let productSection = $('#products');
+                        let productSectionTop = productSection.offset().top;
+                        let productSectionBottom = productSectionTop + productSection.outerHeight();
+                        let windowBottom = $(window).scrollTop() + $(window).height();
+        
+                        if (windowBottom > productSectionTop && $(window).scrollTop() < productSectionBottom) {
+                            $('.pagination-bar').fadeIn();
+                        } else {
+                            $('.pagination-bar').fadeOut();
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        
+        <!-- koniec listy produktów -->
+        <!-- <?php include 'list-product-paginacja.html';?>-->
+        <!-- start filtry mobile -->
+         <!-- Główna zawartość strony -->
+
+
+    <!-- Główne Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMain" aria-labelledby="offcanvasMainLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasMainLabel">Filtruj produkty</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        <h3 class="mt-2 mb-1">Aktywne filtry</h3>
+          <div class="active_filtr">
+              <button type="button" class="btn btn-secondary mb-2">wartość jeden cechy 11 <i class="bi bi-x-circle"></i></button>
+              <button type="button" class="btn btn-secondary mb-2">wartość cechy 11 <i class="bi bi-x-circle"></i></button>
+              <button type="button" class="btn btn-secondary mb-2">wartość <i class="bi bi-x"></i></button>
+          </div>
+          <div class="input-group mb-3 mt-4">
+              <input type="text" class="form-control" value="Znajdź" />
+          </div>
+          <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="select_all">
+              <label class="form-check-label" for="select_all">zaznacz wszystkie</label>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu1">Producent <span class="badge text-bg-primary ms-3">4</span> <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu2">Typ <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu3">Prąd przewodzenia <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu4">Napięcie przewodzenia <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu5">Czas gotowości <span class="badge text-bg-primary ms-3">2</span><span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu6">Rodzaj opakowania <span class="badge text-bg-primary ms-3">1</span><span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu7">Moc rozproszenia <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu8">Zastosowanie <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu9">Technologia <span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="d-block w-100 list-group-item-action" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSubmenu10">Prąd w impulsie maks<span class="float-end"><i class="bi bi-arrow-right"></i></span></a>
+            </li>
+          </ul>
+          <div class="container">
+              <div class="row justify-content-start">
+                  <div class="col">
+                      <button type="button" class="btn btn-outline-primary mt-3 w-100"><i class="bi bi-x-circle me-2"></i> wyczyść filtry</button>
+                  </div>
+                  <div class="col">
+                      <button type="button" class="btn btn-primary mt-3 w-100"><i class="bi bi-check2-circle me-2"></i> zastosuj</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSubmenu1" aria-labelledby="offcanvasSubmenu1Label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSubmenu1Label">Producent</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        <div class="mt-3 mb-2 d-block">
+              <button class="btn btn-secondary w-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMain"><i class="bi bi-arrow-left-circle me-2 "></i> Powrót do Głównego Menu</button>
+          </div>
+          <div class="input-group mb-3 mt-4">
+              <input type="text" class="form-control" value="Znajdź" />
+          </div>
+          <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="select_all">
+              <label class="form-check-label" for="select_all">zaznacz wszystkie</label>
+          </div>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <input id="prod_1" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_1">Producent 1</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="prod_2" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_2">Producent 2</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="prod_3" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_3">Producent 3</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="prod_4" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_4">Producent 4</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="prod_5" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_5">Producent 5</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="prod_6" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_6">Producent 6</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="prod_7" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_7">Producent 7</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_8" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="prod_8">Producent 8</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_9" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_9">Producent 9</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_10" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_10">Producent 10</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_11" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_11">Producent 11</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_12" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_12">Producent 12</label>
+              </li>
+          </ul>
+          <div class="container">
+              <div class="row justify-content-start">
+                  <div class="col">
+                      <button type="button" class="btn btn-outline-primary mt-3 w-100"><i class="bi bi-x-circle me-2"></i> wyczyść filtry</button>
+                  </div>
+                  <div class="col">
+                      <button type="button" class="btn btn-primary mt-3 w-100"><i class="bi bi-check2-circle me-2"></i> zastosuj</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSubmenu2" aria-labelledby="offcanvasSubmenu2Label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSubmenu2Label">Typ</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mt-3 mb-2 d-block">
+              <button class="btn btn-secondary w-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMain"><i class="bi bi-arrow-left-circle me-2 "></i> Powrót do Głównego Menu</button>
+          </div>
+          <div class="input-group mb-3 mt-4">
+              <input type="text" class="form-control" value="Znajdź" />
+          </div>
+          <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="select_all">
+              <label class="form-check-label" for="select_all">zaznacz wszystkie</label>
+          </div>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item disabled">
+                  <input id="typ_1" class="form-check-input me-3" type="checkbox" value="" aria-label="..." disabled><label for="prod_1">Typ 21BG</label>
+              </li>
+              <li class="list-group-item disabled">
+                  <input id="typ_2" class="form-check-input me-3" type="checkbox" value="" aria-label="..." disabled><label for="typ_2">Typ 22RT</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_3" class="form-check-input me-3" type="checkbox" value="" aria-label="..." disabled><label for="typ_3">Typ 23ER</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_4" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_4">Typ 24ER</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_5" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_5">Typ 25SD</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_6" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_6">Typ 26YU</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_7" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_7">Typ 27QW</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_8" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_8">Typ 28XA</label>
+              </li>
+          </ul>
+          <div class="container">
+              <div class="row justify-content-start">
+                  <div class="col">
+                      <button type="button" class="btn btn-outline-primary mt-3 w-100"><i class="bi bi-x-circle me-2"></i> wyczyść filtry</button>
+                  </div>
+                  <div class="col">
+                      <button type="button" class="btn btn-primary mt-3 w-100"><i class="bi bi-check2-circle me-2"></i> zastosuj</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSubmenu3" aria-labelledby="offcanvasSubmenu3Label">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSubmenu3Label"><button class="btn btn-primary me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMain"><i class="bi bi-arrow-left-circle me-2 "></i> </button> Napięcie przewodzenia</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="mt-3 mb-2 d-block">
+              <button class="btn btn-secondary w-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMain"><i class="bi bi-arrow-left-circle me-2 "></i> Powrót do Głównego Menu</button>
+          </div>
+          <div class="input-group mb-3 mt-4">
+              <input type="text" class="form-control" value="Znajdź" />
+          </div>
+          <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="select_all">
+              <label class="form-check-label" for="select_all">zaznacz wszystkie</label>
+          </div>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <input id="typ_51" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_51">Typ 25SD</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_61" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_61">Typ 26YU</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_71" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_71">Typ 27QW</label>
+              </li>
+              <li class="list-group-item">
+                  <input id="typ_81" class="form-check-input me-3" type="checkbox" value="" aria-label="..."><label for="typ_81">Typ 28XA</label>
+              </li>
+          </ul>
+          <div class="container">
+              <div class="row justify-content-start">
+                  <div class="col">
+                      <button type="button" class="btn btn-outline-primary mt-3 w-100"><i class="bi bi-x-circle me-2"></i> wyczyść filtry</button>
+                  </div>
+                  <div class="col">
+                      <button type="button" class="btn btn-primary mt-3 w-100"><i class="bi bi-check2-circle me-2"></i> zastosuj</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  
+        <!-- koniec filtry mobile -->
+        
+        
+        </div>
+    </div>
+    </div><!-- koniec container mt-4 -->
+    </div>
+  </body>
+  </html>
+  </body>
+</html>

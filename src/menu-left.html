@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sklep - Menu Kategorii</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="d-flex">
+      <aside class="bg-light border-end p-3" style="width: 250px; min-height: 100vh;">
+        <h5 class="mb-4">Kategorie</h5>
+
+        <div class="accordion" id="menuAccordion">
+          <!-- Odzież -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOdziez">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOdziez">
+                Odzież
+              </button>
+            </h2>
+            <div id="collapseOdziez" class="accordion-collapse collapse show" data-bs-parent="#menuAccordion">
+              <div class="accordion-body ps-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Koszulki</a></li>
+                  <li><a href="#">Spodnie</a></li>
+                  <li><a href="#">Bluzy</a></li>
+                  <li><a href="#">Kurtki</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Obuwie -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingObuwie">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObuwie">
+                Obuwie
+              </button>
+            </h2>
+            <div id="collapseObuwie" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+              <div class="accordion-body ps-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Sneakersy</a></li>
+                  <li><a href="#">Trampki</a></li>
+                  <li><a href="#">Buty zimowe</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Akcesoria -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAkcesoria">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAkcesoria">
+                Akcesoria
+              </button>
+            </h2>
+            <div id="collapseAkcesoria" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+              <div class="accordion-body ps-3">
+                <ul class="list-unstyled mb-0">
+                  <li><a href="#">Torby</a></li>
+                  <li><a href="#">Czapki</a></li>
+                  <li><a href="#">Okulary</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="p-4 flex-grow-1">
+        <h1>Strona główna sklepu</h1>
+      </main>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

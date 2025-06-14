@@ -1,0 +1,23 @@
+@media screen and (max-width:997px){
+
+    .list_view .product_container {
+    }
+}
+@media only screen and (max-width: 1899px) {
+    .list_view .product_container {
+     /* background:red; */
+     /* grid-template-areas:
+    "product_image product_decs product_price product_order";
+    height: 19.3rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 0 1%;
+    grid-auto-flow: row;*/
+    }
+}
+
+
+.list_view .product_image {grid-area: product_image};
+.list_view .product_decs { grid-area: product_decs};
+.list_view .product_price { grid-area: product_price;};
+.list_view .product_order { grid-area: product_order;};

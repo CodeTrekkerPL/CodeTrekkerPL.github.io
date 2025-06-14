@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wtyczka / Bootstrap / Vite</title>
+<script type="module" src="./js/main.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    console.log("jQuery działa!");
+  });
+</script>
+
+
+</head>
+  <body>
+    <header>
+        <div class="top_setion py-2">
+          <div class="container fw-medium">
+            <div class="row">
+              <div class="col-sm-3 d-none d-sm-none d-md-block ">
+                <button type="button" class="btn btn-sm btn-light fw-medium me-3"><i class="bi bi-telephone"></i> +48 42 28 075 71</button>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <div class="d-grid gap-2 d-inline-flex d-sm-flex justify-content-md-end">
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-none d-lg-block"><i class="bi bi-shield-plus me-1"></i> Zaloguj się</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-none d-lg-block"><i class="bi bi-person-plus me-1"></i> Rejestracja</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-sm-inline-flex " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"><i class="bi bi-person me-1"></i> Panel użytkownika</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium btn-outline d-sm-inline-flex"><span class="country me-2">Polska</span> <span class="currency me-2">Waluta:</span> <strong>PLN</strong></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src=./public/logo-wtyczka.svg class="logo" alt="Sklep wtyczka.net" />
+            </a>
+            <form class="d-flex w-50">
+                <div class="input-group">
+                <input class="form-control " type="search" placeholder="Wyszukaj" aria-label="Search">
+                <button class="btn btn-primary px-4" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+            </form>
+            <button class="btn btn-primary ms-2"><i class="bi bi-basket me-2"></i> Koszyk</button>
+          </div>
+        </nav>
+    <div class="">
+        <nav class="navbar navbar-expand-lg bg-dark shadow-sm py-1 position-relative">
+          <div class="container">
+              <div class="mb-0">
+                <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_12" aria-expanded="false" aria-controls="category_12">Kategoria 1</button>
+                <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_13" aria-expanded="false" aria-controls="category_13">Kategoria 2</button>
+                <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_14" aria-expanded="false" aria-controls="category_14">Kategoria 3</button>
+                <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_15" aria-expanded="false" aria-controls="category_15">Kategoria 4</button>
+                <button class="btn btn-dark toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#category_16" aria-expanded="false" aria-controls="category_16">Kategoria 5</button>
+              </div>
+          </div>
+        </nav>
+        <div class="container position-relative">
+          <div class="collapse position-absolute w-100 z-3" id="category_12">
+            <div class="card card-body">
+              <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="/">Nazwa Kategorii @1</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii </a>
+                </div>
+            </div>
+          </div>
+          <div class="collapse position-absolute w-100 z-3" id="category_13">
+            <div class="card card-body">
+              <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @2</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 12</a>
+                </div>
+            </div>
+          </div>
+          <div class="collapse position-absolute w-100 z-3" id="category_14">
+            <div class="card card-body">
+              <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @3</a>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                  <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                </div>
+            </div>
+          </div>
+          <div class="collapse position-absolute w-100 z-3" id="category_15">
+            <div class="card card-body">
+              <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @4</a>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+              </div>
+            </div>
+          </div>
+          <div class="collapse position-absolute w-100 z-3" id="category_16">
+            <div class="card card-body">
+              <a class='link-dark text-decoration-none fw-bold lh-lg fs-5 mb-1' href="#">Nazwa Kategorii @6</a>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr);gap: 0px,">
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+                <a href="{link.url}" class="d-block lh-lg link-dark fw-medium">Nazwa podkategorii 3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </header>
+    <div class="container-fluid bg-light">
+        <div class="container mt-4">
+            <article class="product card card-body shadow-sm bg-white">
+                <h1 class="fs-4 fw-bold mb-4 d-none d-sm-block d-md-none">Nazwa produktu Pompa Hydrauliczna Parker</h1>
+                <div class="row">
+                  <div class="col-sm-12 col-md-4">
+                    <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B4/0C/D0/00/0/901195_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=8176e8c0bebd2c156e3f0946165464e76451a926" alt="Produkt" class="img-fluid mb-md-2" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#productModal" />
+                    <div class="thumbnail-list mb-3">
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B4/0C/D0/00/0/901195_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=8176e8c0bebd2c156e3f0946165464e76451a926" alt="Miniaturka 2" class="img-thumbnail mb-2" style="width:19%;height:auto" data-bs-toggle="modal" data-bs-target="#productModal" data-img="https://ce8dc832c.cloudimg.io/v7/_cdn_/B4/0C/D0/00/0/901195_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=8176e8c0bebd2c156e3f0946165464e76451a926">
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B1/8D/70/00/0/514075_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=866e547c817f7a8b5fb32e71788eea462819eba1" alt="Miniaturka 3" class="img-thumbnail mb-2" style="width:19%;height:auto" data-bs-toggle="modal" data-bs-target="#productModal" data-img="https://ce8dc832c.cloudimg.io/v7/_cdn_/B1/8D/70/00/0/514075_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=866e547c817f7a8b5fb32e71788eea462819eba1">
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/31/90/00/0/594847_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=0885c20bb0efc7dec9f45a7b5e6d958e1f3c6c33" alt="Miniaturka 1" class="img-thumbnail mb-2" style="width:19%;height:auto" data-bs-toggle="modal" data-bs-target="#productModal" data-img="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/31/90/00/0/594847_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=0885c20bb0efc7dec9f45a7b5e6d958e1f3c6c33">
+                    </div>
+                    <div>
+                          <p class="fs-6">Zdjęcia produktów to ilustracje poglądowe i mogą czasami różnić się od rzeczywistego wyglądu przedmiotu. Nie zmienia to jednak ich podstawowych właściwości.</p>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <h1 class="fs-5 fw-bold mb-4">Nazwa produktu Pompa Hydrauliczna Parker</h1>
+                        <p>Kod: <strong>EN/456/4566/POLW/12</strong></p>
+                        <p><a class="context" href="#"><i class="bi bi-filetype-pdf"></i> dokumentacja producenta</a></p>
+                        <p>Dokumentacja nie jest aktualizowana automatycznie, jednak dokładamy wszelkich starań, żeby udostępniać najnowsze wersje dokumentów.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                      <!-- dostępność -->
+                      <div class="col-sm-12 col-lg-12 col-xl-5 float-xl-start pe-xl-2">
+                        <span class="badge bg-success lh-lg">160</span> <button data-bs-toggle="modal" data-bs-target="#availability_notification" class="btn btn-sm btn-danger" ><i class="bi bi-alarm-fill"></i></button>
+                      </div>
+                      <div class="col-sm-12 col-lg-12 col-xl-7 mt-2 mt-xl-0 float-xl-end ps-xl-2">
+                        <button class="btn btn-sm btn-outline-dark w-100" data-bs-toggle="modal" data-bs-target="#check_deliveries"><i class="bi bi-truck me-2"></i></i>Sparwadź dostawy</button>
+                      </div>
+                      <!-- <div class="">
+                        <div class="col-xl-12 mt-2 mt-xl-3">
+                          <button data-bs-toggle="modal" data-bs-target="#availability_notification" class="btn btn-sm btn-outline-dark w-100" ><i class="bi bi-alarm-fill me-2"></i> Powiadom mnie o dostępności</button>
+                        </div>
+                      </div> -->
+                      <!-- koniec dostepność -->
+                        <p>Twój rabat: 10%</p>
+                        <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                        <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+
+                        <div class="col-sm-12 col-lg-12 col-xl-5 float-xl-start pe-xl-2">
+                          <div class="input-group">
+                              <button class="btn btn-outline-secondary" id="decrease">-</button>
+                              <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                              <button class="btn btn-outline-secondary" id="increase">+</button>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-xl-7 mt-2 mt-xl-0 float-xl-end ps-xl-2">
+                          <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                        </div>
+                    </div>
+                </div>
+            </article>   
+        </div><!-- ok end -->
+    </div><!-- koniec container mt-4 -->
+<!-- start modal dostawy -->
+<div class="modal fade" tabindex="-1" id="check_deliveries" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Dostawy do magazynu</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+              <div class="col-8">
+                  <p>Kod produktu: <strong>ENN/456/5677/PL/K12330</strong></p>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                <div class="table-responsive">
+                  <table class="table align-middle">
+                    <thead class="table-dark">
+                      <tr class="align-middle">
+                        <th scope="col">Ilość</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Czas dostawy do magazynu</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><h5 class="my-0"><span class="badge text-bg-danger">0</span></h5></th>
+                        <td>W magazynie / Brak w magazynie</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><h5 class="my-0"><span class="badge text-bg-success">56</span></h5></th>
+                        <td>Towar nie został jeszcze zamówiony u naszego dostawcy.</td>
+                        <td>Czas dostawy w dniach: 20 dni</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <span class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Zamknij</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- koniec modal dostawy -->
+<!-- start modal dosteposc -->
+<div class="modal fade" tabindex="-1" id="availability_notification" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form method="post">
+        <input type="hidden" name="send-availability-notification" value="1">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5">Powiadom mnie o dostępności produktu</h1>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <p>Powiadomimy Cię, kiedy tylko towar trafi do naszej sprzedaży.</p>
+              <div class="form-group">
+                  <label for="email">E-mail <span>*</span></label>
+                  <input type="email" class="form-control" id="email" required placeholder="" name="Email" autocomplete="off">
+              </div>
+              <div class="form-group form-check mt-2">
+                  <input type="checkbox" name="confirm" id="confirm" class="form-check-input" required value="1">
+                  <label class="form-check-label" for="confirm">Administratorem Twoich danych osobowych jest OK Spółka Sp. z o.o. Informacje o polityce prywatności znajdziesz <a class="" href="#" target="blank">na tej stronie</a>.</label>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <span class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Anuluj</span>
+              <span class="btn btn-primary">Zapisz</span>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- 
+<div class="modal fade" tabindex="-1" id="availability_notification" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Dziękujemy za zainteresowanie naszym produktem!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Otrzymaliśmy Twoje zgłoszenie i powiadomimy Cię, gdy tylko produkt będzie ponownie dostępny.</p>
+      </div>
+      <div class="modal-footer">
+        <span class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">Zamknij</span>
+      </div>
+    </div>
+  </div>
+</div>
+--> 
+
+<!-- koniec modal dosteposc -->
+
+<!-- start modal karuzela obrazków -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+        <!-- <div class="modal-header bg-primary">
+            <h5 class="modal-title text-white" id="productModalLabel">Nazwa Produktu / Kod Produktu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body modal-prezentation">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="container position-relative">
+            <button class="carousel-nav-button carousel-nav-prev" id="prevImage">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="carousel-nav-button carousel-nav-next" id="nextImage">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+            <div class="full-img">
+              <img id="mainModalImage" src="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/31/90/00/0/594847_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=0885c20bb0efc7dec9f45a7b5e6d958e1f3c6c33" alt="Obraz produktu" />
+            </div>
+            <div class="thumbnail-list">
+              <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/31/90/00/0/594847_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=0885c20bb0efc7dec9f45a7b5e6d958e1f3c6c33" alt="Miniaturka 1" class="img-thumb img-thumbnail" data-img="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/31/90/00/0/594847_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=0885c20bb0efc7dec9f45a7b5e6d958e1f3c6c33">
+              <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B4/0C/D0/00/0/901195_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=8176e8c0bebd2c156e3f0946165464e76451a926" alt="Miniaturka 2" class="img-thumb img-thumbnail" data-img="https://ce8dc832c.cloudimg.io/v7/_cdn_/B4/0C/D0/00/0/901195_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=8176e8c0bebd2c156e3f0946165464e76451a926">
+              <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/B1/8D/70/00/0/514075_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=866e547c817f7a8b5fb32e71788eea462819eba1" alt="Miniaturka 3" class="img-thumb img-thumbnail" data-img="https://ce8dc832c.cloudimg.io/v7/_cdn_/B1/8D/70/00/0/514075_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=866e547c817f7a8b5fb32e71788eea462819eba1">
+            </div>
+          </div>
+        </div>
+        <!--<div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Zamknij</button>
+        </div> -->
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    // Zmiana zdjęcia po kliknięciu miniaturki
+    $('.img-thumb').on('click', function() {
+      var newSrc = $(this).data('img');
+      $('#mainModalImage').attr('src', newSrc);
+    });
+  });
+  $(document).ready(function() {
+  let currentImageIndex = 0;
+  const images = $('.img-thumb').toArray();
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Funkcja zmiany zdjęcia
+  function changeImage(direction) {
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+    const newSrc = $(images[currentImageIndex]).data('img');
+    $('#mainModalImage').attr('src', newSrc);
+  }
+
+  // Obsługa kliknięcia miniaturki
+  $('.img-thumb').on('click', function() {
+    const newSrc = $(this).data('img');
+    $('#mainModalImage').attr('src', newSrc);
+    currentImageIndex = images.indexOf(this);
+  });
+
+  // Obsługa klawiszy strzałek
+  $(document).on('keydown', function(e) {
+    if ($('#productModal').hasClass('show')) {
+      if (e.keyCode === 37) { // Strzałka w lewo
+        changeImage(-1);
+      } else if (e.keyCode === 39) { // Strzałka w prawo
+        changeImage(1);
+      }
+    }
+  });
+
+  // Obsługa przycisków nawigacji
+  $('#prevImage').on('click', function() {
+    changeImage(-1);
+  });
+
+  $('#nextImage').on('click', function() {
+    changeImage(1);
+  });
+
+  // Obsługa gestów dotykowych
+  $('#mainModalImage').on('touchstart', function(e) {
+    touchStartX = e.originalEvent.touches[0].clientX;
+  });
+
+  $('#mainModalImage').on('touchend', function(e) {
+    touchEndX = e.originalEvent.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  // Obsługa przeciągania myszą
+  let isDragging = false;
+  let startX;
+
+  $('#mainModalImage').on('mousedown', function(e) {
+    isDragging = true;
+    startX = e.pageX;
+    e.preventDefault();
+  });
+
+  $(document).on('mousemove', function(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+  });
+
+  $(document).on('mouseup', function(e) {
+    if (!isDragging) return;
+    
+    const endX = e.pageX;
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > 50) { // Minimalna odległość przeciągnięcia
+      if (diff > 0) {
+        changeImage(1); // Przeciągnięcie w lewo - następne zdjęcie
+      } else {
+        changeImage(-1); // Przeciągnięcie w prawo - poprzednie zdjęcie
+      }
+    }
+    
+    isDragging = false;
+  });
+
+  function handleSwipe() {
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) { // Minimalna odległość przesunięcia
+      if (diff > 0) {
+        changeImage(1); // Przesunięcie w lewo - następne zdjęcie
+      } else {
+        changeImage(-1); // Przesunięcie w prawo - poprzednie zdjęcie
+      }
+    }
+  }
+});
+// Dodaj tę funkcję do istniejącego kodu JavaScript
+function updateActiveThumbnail() {
+  $('.img-thumb').removeClass('border-primary');
+  $(images[currentImageIndex]).addClass('border-primary');
+}
+
+// Zmodyfikuj funkcję changeImage
+function changeImage(direction) {
+  currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+  const newSrc = $(images[currentImageIndex]).data('img');
+  $('#mainModalImage').attr('src', newSrc);
+  updateActiveThumbnail(); // Dodaj to wywołanie
+}
+
+// Dodaj wywołanie updateActiveThumbnail() również w obsłudze kliknięcia miniatury
+$('.img-thumb').on('click', function() {
+  const newSrc = $(this).data('img');
+  $('#mainModalImage').attr('src', newSrc);
+  currentImageIndex = images.indexOf(this);
+  updateActiveThumbnail(); // Dodaj to wywołanie
+});
+</script>
+<!-- koniec modal karuzela obrazków -->
+     <!-- start modale itp panel klienta -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title tight" id="offcanvasRightLabel">Panel klienta</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="list-group">
+                <a href="/moje-konto.php" class="list-group-item list-group-item-action">Moje konto</a>
+                <a href="/dane-firmy.php" class="list-group-item list-group-item-action">Siedziba firmy</a>
+                <a href="/edycja-danych-firmy.php" class="list-group-item list-group-item-action">Edycja siedziby firmy</a>
+                <a href="/uzytkownicy.php" class="list-group-item list-group-item-action">Użytkownicy</a>
+                <a href="/adresy.php" class="list-group-item list-group-item-action">Adresy</a>
+                <a href="/historia-zamowien.php" class="list-group-item list-group-item-action">Historia zamówień</a>
+                <a href="/szczegoly-zamowienia.php" class="list-group-item list-group-item-action">Szczeg. zam.</a>
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-20">
+                <button type="submit" class="btn btn-primary" data-bs-target="#modal_login" data-bs-toggle="modal">Zaloguj się</button>
+            </div>
+        </div>
+    </div>
+  <!-- koniec panel klienta-->
+    </div>
+  </body>
+  </html>
+  </body>
+</html>
