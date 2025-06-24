@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wtyczka / Bootstrap / Vite</title>
+<script type="module" src="./js/main.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- karuzela produktów -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    /*justify-content: center;
+    align-items: center;*/
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+<!-- koniec karuzeli produktów -->
+</head>
+  <body>
+    <header>
+        <div class="top_setion py-2 bg-light">
+          <div class="container fw-medium">
+            <div class="row">
+              <div class="col-sm-3 d-none d-sm-none d-md-block ">
+                <button type="button" class="btn btn-sm btn-light fw-medium me-3"><i class="bi bi-telephone"></i> +48 42 28 075 71</button>
+              </div>
+              <div class="col-sm-12 col-md-9">
+                <div class="d-grid gap-2 d-inline-flex d-sm-flex justify-content-md-end">
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-none d-lg-block"><i class="bi bi-shield-plus me-1"></i> Zaloguj się</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-none d-lg-block"><i class="bi bi-person-plus me-1"></i> Rejestracja</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium me-3 d-sm-inline-flex"><i class="bi bi-person me-1"></i> Panel użytkownika</button>
+                  <button type="button" class="btn btn-sm btn-light fw-medium btn-outline d-sm-inline-flex"><span class="country me-2">Polska</span> <span class="currency me-2">Waluta:</span> <strong>PLN</strong></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <div class="container">
+              <a class="navbar-brand" href="/">
+                  <img src=logo-wtyczka.svg class="logo" alt="Sklep wtyczka.net" />
+              </a>
+              <form class="d-flex w-50">
+                <div class="input-group">
+                  <input class="form-control " type="search" placeholder="Wyszukaj" aria-label="Search">
+                  <button class="btn btn-primary px-4" type="submit"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+            <button class="btn btn-primary ms-2"><i class="bi bi-basket me-2"></i> Koszyk</button>
+          </div>
+        </nav>
+    </header>
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-expand-lg bg-dark shadow-sm py-1 position-relative">
+            <div class="container">
+                <div class="mb-0">
+                  <button class="btn btn-dark toggle-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#category_12" aria-expanded="false" aria-controls="category_12">Katalog produktów</button>
+                  <button class="btn btn-dark toggle-btn" type="button">Aktualności</button>
+                  <button class="btn btn-dark toggle-btn" type="button">Sed interdum ultrices</button>
+                  <button class="btn btn-dark toggle-btn" type="button">Donec ultricies</button>
+                  <button class="btn btn-dark toggle-btn" type="button">Lorem impusm</button>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Accessibility</button>
+                  <button class="btn btn-dark toggle-btn" type="button">Cras faucibus elit</button>
+                  <button class="btn btn-dark toggle-btn" type="button">Kontakt</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section>
+      <div class="container py-3">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+                <nav class="navbar">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#home_category" aria-controls="home_category" aria-expanded="false" aria-label="Toggle navigation">Kategorie produktów <span class="navbar-toggler-icon"></span></button>
+                  <div class="collapse navbar-collapse" id="home_category">
+                    <ul class="navbar-nav list-unstyled">
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home_option rounded-1"><i class="bi bi-person-plus fs-3 icon text-center"></i><span class="link">Nowości</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-person-plus fs-3 icon text-center"></i><span class="link">Promocje </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-person-plus fs-3 icon text-center"></i><span class="link">Lorem ipsum dolor</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-bank fs-3 icon text-center"></i><span class="link">Sit amet</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-balloon fs-3 icon text-center"></i><span class="link">Consectetur adipiscing </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-ban fs-3 icon text-center"></i><span class="link">Elit sum et</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-bandaid fs-3 icon text-center"></i><span class="link">Morbi pellentesque </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-bezier2 fs-3 icon text-center"></i><span class="link">Non sapien non fringilla</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-boombox fs-3 icon text-center"></i><span class="link">Vivamus rhoncus </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-badge-vr fs-3 icon text-center"></i><span class="link">Quis ante ut varius</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-person-plus fs-3 icon text-center"></i><span class="link">Lorem ipsum dolor</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-node-minus fs-3 icon text-center"></i><span class="link">Sit amet</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-bezier fs-3 icon text-center"></i><span class="link">Consectetur adipiscing </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-app-indicator fs-3 icon text-center"></i><span class="link">Elit sum et</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-arrow-through-heart fs-3 icon text-center"></i><span class="link">Morbi pellentesque </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-award-fill fs-3 icon text-center"></i><span class="link">Non sapien non fringilla</span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-backpack-fill fs-3 icon text-center"></i><span class="link">Vivamus rhoncus </span></a></li>
+                      <li class="nav-item my-1"><a href="/kategoria.html" class="link_cat_home rounded-1"><i class="bi bi-badge-vr fs-3 icon text-center"></i><span class="link">Quis ante ut varius</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-10 col-sm-12">
+              <div class="container my-1 py-0 px-0">
+                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-indicators"> <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button> <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> </div>
+                  <div class="carousel-inner rounded-1">
+                    <div class="carousel-item active"> 
+                      <img src="/slider_1.jpg" alt="Opis obrazka" />
+                      <div class="container">
+                        <div class="carousel-caption text-start">
+                          <h1>Donec nec nunc tristique nunc semper malesuada</h1>
+                          <p>Duis ut nulla id erat tristique auctor. Ut mattis felis vel ipsum consectetur bibendum. Fusce interdum ante libero. Quisque eget interdum justo. Donec ac mi felis.</p>
+                          <p><a class="btn btn-lg btn-primary" href="/zakladka_tekstowa_1.html">Aenean a gravida nunc</a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item rounded-1">
+                      <img src="/slider_3.jpg" alt="Opis obrazka" />
+                      <div class="container">
+                        <div class="carousel-caption">
+                          <h1>Morbi ac erat sapien</h1>
+                          <p>Sed at efficitur eros. Sed interdum ultrices urna ac efficitur. Vivamus et metus et lacus fringilla imperdiet. Morbi dapibus sem vel tincidunt placerat. Aenean a gravida nunc, id consectetur quam.</p>
+                          <p><a class="btn btn-lg btn-primary" href="/zakladka_tekstowa_2.html">Pellentesque et arcu</a></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item rounded-1">
+                      <img src="/slider_3.jpg" alt="Opis obrazka" />
+                      <div class="container">
+                        <div class="carousel-caption text-end">
+                          <h1>Pellentesque iaculis magna justo ac elementum</h1>
+                          <p>Sed interdum ultrices urna ac efficitur. Vivamus et metus et lacus fringilla imperdiet</p>
+                          <p><a class="btn btn-lg btn-primary" href="/zakladka_tekstowa_3.html">Vivamus euismod</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button>
+                </div>
+              </div>
+                <div class="container py-0 px-0">
+                  <h3 class="fs-3 fw-bold my-4"><a href="/aktualnosci.html">Aktualności <i class="bi bi-link-45deg"></i></a></h3>
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card shadow-sm">
+                          <img src="/automation-5393191_1920.jpg" alt="Opis obrazka" />
+                        <div class="card-body">
+                          <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                          <p class="card-text">Ut dapibus aliquet rhoncus. Donec dignissim luctus orci, dictum dignissim nisl dictum consectetur.</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Czytaj dalej</button>
+                            </div>
+                            <small class="text-body-secondary">20.06.2025</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card shadow-sm">
+                        <img src="/fiber-optic-4393369_1920.jpg" alt="Opis obrazka" />
+                        <div class="card-body">
+                        <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                          <p class="card-text">Imt pulvinar sem vitae dolor interdum efficitur. Nullam vel pellentesque justo, pulvinar faucibus massa. </p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Czytaj dalej</button>
+                            </div>
+                            <small class="text-body-secondary">20.06.2025</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card shadow-sm">
+                        <img src="/network-2633608_1920.jpg" alt="Opis obrazka" />
+                        <div class="card-body">
+                          <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                          <p class="card-text">Fusce libero arcu, hendrerit congue magna sit amet, ultricies egestas enim. Maecenas ut tortor a dui suscipit blandit. </p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Czytaj dalej</button>
+                            </div>
+                            <small class="text-body-secondary">20.06.2025</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card shadow-sm"> 
+                          <img src="/light-bulb-4314993_1920.jpg" alt="Opis obrazka" />
+                        <div class="card-body">
+                          <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                          <p class="card-text">Aenean vitae varius lectus. Pellentesque iaculis venenatis maximus. Vivamus laoreet lacinia suscipit.</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Czytaj dalej</button> 
+                            </div>
+                            <small class="text-body-secondary">20.06.2025</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card shadow-sm">
+                          <img src="/electric-1080585_1920.jpg" alt="Opis obrazka" />
+                        <div class="card-body">
+                          <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                          <p class="card-text">Duis at convallis sem, quis facilisis lorem. Mauris eu mollis dolor. Proin sed maximus magna, sed tempus eros.</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Czytaj dalej</button> 
+                            </div>
+                            <small class="text-body-secondary">20.06.2025</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="card shadow-sm"> 
+                        <img src="/electrics-3536769_1920.jpg" alt="Opis obrazka" />
+                        <div class="card-body">
+                          <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                          <p class="card-text">Nam et leo vel eros pharetra interdum id eleifend dolor. In hac habitasse platea dictumst.</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Czytaj dalej</button> 
+                            </div>
+                            <small class="text-body-secondary">20.06.2025</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="container py-0 px-0">
+                    <h3 class="fs-3 fw-bold my-4">Polecane produkty <a href="https://codesandbox.io/p/sandbox/jwcnl7?file=%2Findex.html%3A97%2C1-98%2C43">przyklad</a></h3>
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="card shadow-sm"> 
+                            <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/6A/31/90/00/0/594854_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=c01edd0f4e9c6371f1cf54398cb4e4a9ac5731a8" alt="Opis obrazka" />
+                            <div class="card-body">
+                              <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                  <span class="badge text-bg-success">55</span>Dostępny</span>
+                                  <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                  <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                  <div class="col py-2">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                        <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                        <button class="btn btn-outline-secondary" id="increase">+</button>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                  </div>
+
+
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <p>jakas wartość</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="card shadow-sm"> 
+                            <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/31/44/F0/00/0/1000467_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=b8271e6fb39835576cb910e0b1e909335b1c4b89" alt="Opis obrazka" />
+                            <div class="card-body">
+                              <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                  <span class="badge text-bg-success">55</span>Dostępny</span>
+                                  <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                  <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                  <div class="col py-2">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                        <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                        <button class="btn btn-outline-secondary" id="increase">+</button>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                  </div>
+
+
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <p>jakas wartość</p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                        <div class="swiper-slide">
+                          <div class="card shadow-sm"> 
+                            <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/5A/FE/70/00/0/520101_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=1303c8d084fde546d5982b65e6ef410816c08cf8" alt="Opis obrazka" />
+                            <div class="card-body">
+                              <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                  <span class="badge text-bg-success">55</span>Dostępny</span>
+                                  <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                  <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                  <div class="col py-2">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                        <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                        <button class="btn btn-outline-secondary" id="increase">+</button>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                  </div>
+
+
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <p>jakas wartość</p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card shadow-sm"> 
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/01/F0/00/00/0/3856_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=dcc99fd4705287d7316332a8414c6e1e4420a2b3" alt="Opis obrazka" />
+                          <div class="card-body">
+                            <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                <span class="badge text-bg-success">55</span>Dostępny</span>
+                                <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <div class="col py-2">
+                                  <div class="input-group">
+                                      <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                      <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                      <button class="btn btn-outline-secondary" id="increase">+</button>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>jakas wartość</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card shadow-sm"> 
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/78/C2/70/00/0/470151_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=4d1450106f9e8e3aec651087c9abc7136e29e07c" alt="Opis obrazka" />
+                          <div class="card-body">
+                            <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                              <span class="badge text-bg-success">55</span>Dostępny</span>
+                                <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <div class="col py-2">
+                                  <div class="input-group">
+                                      <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                      <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                      <button class="btn btn-outline-secondary" id="increase">+</button>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>jakas wartość</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card shadow-sm"> 
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/A8/A2/90/00/0/600714_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=9f649c1ba8f1846f6b30021ebca72a3a390c3600" alt="Opis obrazka" />
+                          <div class="card-body">
+                            <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                <span class="badge text-bg-success">55</span>Dostępny</span>
+                                <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <div class="col py-2">
+                                  <div class="input-group">
+                                      <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                      <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                      <button class="btn btn-outline-secondary" id="increase">+</button>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>jakas wartość</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card shadow-sm"> 
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/F9/F1/80/00/0/532383_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=9927ec3805820a40c9f2beaaeaf44902059f04ba" alt="Opis obrazka" />
+                          <div class="card-body">
+                            <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                <span class="badge text-bg-success">55</span>Dostępny</span>
+                                <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <div class="col py-2">
+                                  <div class="input-group">
+                                      <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                      <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                      <button class="btn btn-outline-secondary" id="increase">+</button>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>jakas wartość</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card shadow-sm"> 
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/2C/A7/70/00/0/490178_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=b9666ca77940674dd7efa434b844bdc4e2ee5b65" alt="Opis obrazka" />
+                          <div class="card-body">
+                            <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                <span class="badge text-bg-success">55</span>Dostępny</span>
+                                <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <div class="col py-2">
+                                  <div class="input-group">
+                                      <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                      <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                      <button class="btn btn-outline-secondary" id="increase">+</button>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>jakas wartość</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card shadow-sm"> 
+                          <img src="https://ce8dc832c.cloudimg.io/v7/_cdn_/D3/F0/90/00/0/593725_1.jpg?width=640&height=480&wat=1&wat_url=_tme-wrk_%2Ftme_new.png&wat_scale=100p&ci_sign=17fb9451d1d1caee8e1a638758a59870cf0e24a2" alt="Opis obrazka" />
+                          <div class="card-body">
+                            <h4 class="card-title fs-5">Dignissim nisl dictum consectetur </h4>
+                                <span class="badge text-bg-success">55</span>Dostępny</span>
+                                <p class="mb-0">netto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <p class="mb-3">brutto: <span class="fs-4 fw-bold">1000,00</span> PLN</p>
+                                <div class="col py-2">
+                                  <div class="input-group">
+                                      <button class="btn btn-outline-secondary" id="decrease">-</button>
+                                      <input type="text" class="form-control text-center border-secondary" id="quantity" value="1" readonly>
+                                      <button class="btn btn-outline-secondary" id="increase">+</button>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <button class="btn btn-grad w-100" id="addToCart"><i class="bi bi-basket me-2"></i>Dodaj do koszyka</button>
+                                </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p>jakas wartość</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                      <!-- <div class="swiper-pagination"></div> -->
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                    </div>
+                  
+                    <!-- Swiper JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                  
+                    <!-- Initialize Swiper -->
+                    <script>
+                      var swiper = new Swiper(".mySwiper", {
+                        lazy: true,
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        pagination: {
+                          el: ".swiper-pagination",
+                          clickable: true,
+                        },
+                        navigation: {
+                         nextEl: ".swiper-button-next",
+                           prevEl: ".swiper-button-prev",
+                        },
+                        breakpoints: {
+                          640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                          },
+                          768: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                          },
+                          1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 10, //margines 
+                          },
+                        },
+                      });
+                    </script>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- start unia -->
+         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu Dostępności</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="row row-cols-2 g-4">
+          <div class="col">
+            <button id="btn-contrast" class="card h-100 w-100">
+              <i class="bi bi-circle-half d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Kontrast +</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-links"
+              class="card h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+              <i class="bi bi-link d-block fs-2" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Podświetlenie linków</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-big-text" class="card h-100 w-100">
+              <i class="bi bi-fonts d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Duży Tekst</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-space-text" class="card h-100 w-100">
+              <i class="bi bi-arrows d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Odstęp między znakami</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-stop-animations" class="card h-100 w-100">
+              <i class="bi bi-pause-circle d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Zatrzymaj animacje</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-hide-images" class="card h-100 w-100">
+              <i class="bi bi-images opacity-25 d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Ukryj obrazy</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-friendly-dyslexia" class="card h-100 w-100">
+              <i class="bi bi-file-font d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Przyjazny dla dysleksji</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-pointer" class="card h-100 w-100">
+              <i class="bi bi-cursor d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Kursor</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-hints" class="card h-100 w-100">
+              <i class="bi bi-chat-square-text d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Podpowiedzi</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-line-heights" class="card h-100 w-100">
+              <div class="d-flex flex-direction-row justify-content-center">
+                <i class="bi bi-arrows-vertical fs-3" aria-hidden="true"></i>
+                <i class="bi bi-text-left fs-3" aria-hidden="true"></i>
+              </div>
+              <span class="card-text fw-semibold">Wysokości linii</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-text-align" class="card h-100 w-100">
+              <i class="bi-text-left d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Wyrównanie tekstu</span>
+            </button>
+          </div>
+          <div class="col">
+            <button id="btn-saturation" class="card h-100 w-100">
+              <i class="bi bi-droplet-half d-block fs-3" aria-hidden="true"></i>
+              <span class="card-text fw-semibold">Nasycenie</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- koniec  unia -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  </body>
+</html>

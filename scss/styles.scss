@@ -78,6 +78,7 @@ $primary-light: #FF6B3D; // jaśniejsze tło, aby poprawić dostępność
 @import "../scss/card_product_categories.scss";
 @import "../scss/flirting_categories.scss";
 @import "../scss/category.scss";
+@import "../scss/home_elements.scss";
 // Import Bootstrap
 //@import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "@fontsource/Inter"; // Defaults to weight 400
@@ -174,7 +175,6 @@ a {
     }
 }
 
-/* KOd Ai */
 .modal-prezentation {
   position: relative;
   touch-action: pan-y pinch-zoom;
@@ -253,6 +253,13 @@ a {
 .form-check-input {margin: 0;vertical-align:unset}
 .lh-xl {line-height:3rem}
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/_carousel.scss";
+@import "bootstrap/scss/_navbar.scss";
+@import "bootstrap/scss/_reboot.scss";
+
+.top_setion {
+  background-color: $gray-200;
+}
 
 .btn-outline-primary {color:$primary}
 .btn-grad {background-image: linear-gradient(to right,  $gray-light 0%,  $gray-dark  51%,  $gray-light  100%)}
@@ -273,3 +280,5 @@ a {
  .btn-secondary {color:$white}
  $gray-dark: #2b2b2b; // lepszy kontrast dla tekstu
  $gray-light: #FF6B3D; // jaśniejsze tło, aby poprawić dostępność
+
+ /* prototyp */

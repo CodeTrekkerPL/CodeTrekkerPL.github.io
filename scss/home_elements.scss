@@ -1,0 +1,38 @@
+.link_cat_home {  display: grid!important;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "icon link";
+  align-items: center;
+  height: 3.8em;
+  color:$gray-dark!Important;
+  background-color: $gray-200;
+  padding:0.3rem;
+}
+.link_cat_home:hover {
+    background-color: $gray-100;
+}
+.link_cat_home_option {  display: grid!important;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  gap: 5px 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "icon link";
+  align-items: center;
+  height: 3.8em;
+  color:$red!Important;
+   background-color:$white;
+  padding:0.3rem;
+  border:1px solid $red!Important;
+}
+.link_cat_home_option:hover {
+  background-color: $red;
+  color:$white!Important;
+}
+
+.icon { grid-area: icon; justify-items: center; }
+
+.link { grid-area: link; }
